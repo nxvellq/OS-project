@@ -1,0 +1,249 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/bf/Lubuntu_12_04.png');
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .terminal {
+            background-color: #1e1e1e;
+            border: 3px solid #00ff00;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+            overflow: hidden;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .terminal-header {
+            background-color: #333;
+            padding: 10px 15px;
+            border-bottom: 2px solid #00ff00;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #00ff00;
+        }
+
+        .terminal-header-title {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .terminal-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .terminal-button {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-close {
+            background-color: #ff5f56;
+        }
+
+        .btn-minimize {
+            background-color: #ffbd2e;
+        }
+
+        .btn-maximize {
+            background-color: #27c93f;
+        }
+
+        .terminal-output {
+            flex: 1;
+            padding: 15px;
+            color: #00ff00;
+            overflow-y: auto;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .terminal-output::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .terminal-output::-webkit-scrollbar-track {
+            background: #1e1e1e;
+        }
+
+        .terminal-output::-webkit-scrollbar-thumb {
+            background: #00ff00;
+            border-radius: 4px;
+        }
+
+        .command-line {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .prompt {
+            color: #00ff00;
+            margin-right: 8px;
+            font-weight: bold;
+        }
+
+        .command-text {
+            color: #ffffff;
+            flex: 1;
+        }
+
+        .output-text {
+            color: #00ff00;
+            margin-left: 5px;
+        }
+
+        .info-panel {
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            padding: 15px;
+            color: #00ff00;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .info-panel::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .info-panel::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .info-panel::-webkit-scrollbar-thumb {
+            background: #00ff00;
+            border-radius: 3px;
+        }
+
+        .info-title {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #00ff00;
+            border-bottom: 1px solid #00ff00;
+            padding-bottom: 8px;
+        }
+
+        .info-content {
+            font-size: 12px;
+            line-height: 1.5;
+            color: #00ff00;
+        }
+
+        .commands-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .command-btn {
+            background-color: #333;
+            border: 1px solid #00ff00;
+            color: #00ff00;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            font-weight: bold;
+            transition: all 0.3s;
+            text-align: left;
+        }
+
+        .command-btn:hover {
+            background-color: #00ff00;
+            color: #1e1e1e;
+            transform: translateX(-5px);
+        }
+
+        .command-btn.active {
+            background-color: #00ff00;
+            color: #1e1e1e;
+        }
+
+        .back {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        .button {
+            text-decoration: none;
+            color: white;
+            font-family: arial;
+            width: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border-radius: 6px;
+            padding: 10px 5px;
+            background-color: rgba(0, 0, 0, 0.5);
+            transition: all 0.3s;
+        }
+
+        .button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+            transform: scale(1.1);
+        }
+
+        .loading {
+            display: inline-block;
+            margin-left: 5px;
+        }
+
+        .loading span {
+            animation: blink 1.4s infinite;
+        }
+
+        .loading span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .loading span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes blink {
+            0%, 60%, 100% { opacity: 0; }
+            30% { opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .info-panel {
+                max-height: 300px;
+            }
+        }
