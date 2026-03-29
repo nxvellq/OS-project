@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>macOS Interface</title>
+    <link rel="stylesheet" href="css/macos.css">
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+
+    <div class="dock">
+        <div class="dock-item active" data-window="about" onclick="openWindow('about', this)">
+            <img src="https://img.icons8.com/?size=96&id=17843&format=png" alt="macOS">
+        </div>
+        <div class="dock-item" data-window="features" onclick="openWindow('features', this)">
+            <img src="https://img.icons8.com/?size=96&id=15396&format=png" alt="Функции">
+        </div>
+        <div class="dock-item" data-window="security" onclick="openWindow('security', this)">
+            <img src="https://img.icons8.com/?size=96&id=69144&format=png" alt="Безопасность">
+        </div>
+        <div class="dock-item" data-window="performance" onclick="openWindow('performance', this)">
+            <img src="https://img.icons8.com/?size=96&id=21735&format=png" alt="Производительность">
+        </div>
+        <div class="dock-separator"></div>
+        <div class="dock-item" data-window="apps" onclick="openWindow('apps', this)">
+            <img src="https://img.icons8.com/?size=96&id=47733&format=png" alt="Приложения">
+        </div>
+        <div class="dock-item" data-window="system" onclick="openWindow('system', this)">
+            <img src="https://img.icons8.com/?size=96&id=12621&format=png" alt="Система">
+        </div>
+    </div>
+
+    <div class="window" id="about">
+        <div class="window-header">
+            <div class="window-title">О macOS</div>
+            <div class="window-controls">
+                <button class="window-btn window-close" onclick="closeWindow('about')"></button>
+                <button class="window-btn window-minimize"></button>
+                <button class="window-btn window-maximize"></button>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="window-section">
+                <h2>macOS - Сердце Apple</h2>
+                <p>macOS - это проприетарная графическая операционная система, разработанная и продаваемая компанией Apple Inc. Она является основной операционной системой для компьютеров Mac от Apple.</p>
+            </div>
+
+            <div class="window-section">
+                <h2>История и эволюция</h2>
+                <ul class="feature-list">
+                    <li>Впервые выпущена в 2001 году как Mac OS X 10.0 (Cheetah)</li>
+                    <li>Построена на основе UNIX для стабильности и мощности</li>
+                    <li>Переименована в macOS в 2016 году с Sierra</li>
+                    <li>Названа в честь мест в Калифорнии (Big Sur, Monterey, Ventura, Sonoma)</li>
+                    <li>Последние версии используют процессоры Apple Silicon (M1, M2, M3)</li>
+                </ul>
+            </div>
+
+            <div class="window-section">
+                <h2>Ключевые характеристики</h2>
+                <div class="feature-grid">
+                    <div class="feature-box">
+                        <strong>Красивый дизайн</strong>
+                        <span>Элегантный интуитивный интерфейс</span>
+                    </div>
+                    <div class="feature-box">
+                        <strong>Мощная производительность</strong>
+                        <span>Оптимизирована для творческих профессионалов</span>
+                    </div>
+                    <div class="feature-box">
+                        <strong>Безопасность в приоритете</strong>
+                        <span>Встроенная защита приватности</span>
+                    </div>
+                    <div class="feature-box">
+                        <strong>Бесшовная интеграция</strong>
+                        <span>Работает со всеми устройствами Apple</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="window" id="features">
+        <div class="window-header">
+            <div class="window-title">Функции macOS</div>
+            <div class="window-controls">
+                <button class="window-btn window-close" onclick="closeWindow('features')"></button>
+                <button class="window-btn window-minimize"></button>
+                <button class="window-btn window-maximize"></button>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="window-section">
+                <h2>Основные функции</h2>
+                <ul class="feature-list">
+                    <li><strong>Spotlight Search</strong> - Мгновенный поиск файлов, приложений и информации</li>
+                    <li><strong>Mission Control</strong> - Организация и управление всеми открытыми окнами</li>
+                    <li><strong>Spaces</strong> - Создание нескольких рабочих пространств для разных задач</li>
+                    <li><strong>Dock</strong> - Быстрый доступ к любимым приложениям и файлам</li>
+                    <li><strong>Finder</strong> - Интуитивная система управления файлами</li>
+                </ul>
+            </div>
+
+            <div class="window-section">
+                <h2>Продвинутые возможности</h2>
+                <ul class="feature-list">
+                    <li><strong>Metal</strong> - Высокопроизводительная технология графики</li>
+                    <li><strong>Core ML</strong> - Машинное обучение на устройстве</li>
+                    <li><strong>HandOff</strong> - Продолжение работы на разных устройствах Apple</li>
+                    <li><strong>Universal Clipboard</strong> - Общий буфер обмена между устройствами</li>
+                    <li><strong>Sidecar</strong> - Использование iPad как второго дисплея</li>
+                </ul>
+            </div>
+
+            <div class="window-section">
+                <h2>Инструменты продуктивности</h2>
+                <ul class="feature-list">
+                    <li>TextEdit - Простой и мощный текстовый редактор</li>
+                    <li>Preview - Просмотр и редактирование изображений</li>
+                    <li>Quick Look - Быстрый просмотр файлов</li>
+                    <li>Time Machine - Система автоматического резервного копирования</li>
+                    <li>Boot Camp - Запуск Windows на Mac</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="window" id="security">
+        <div class="window-header">
+            <div class="window-title">Безопасность и приватность</div>
+            <div class="window-controls">
+                <button class="window-btn window-close" onclick="closeWindow('security')"></button>
+                <button class="window-btn window-minimize"></button>
+                <button class="window-btn window-maximize"></button>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="window-section">
+                <h2>Функции безопасности</h2>
+                <ul class="feature-list">
+                    <li><strong>Gatekeeper</strong> - Защита от вредоносного ПО</li>
+                    <li><strong>Code Signing</strong> - Обеспечение подлинности приложений</li>
+                    <li><strong>System Integrity Protection (SIP)</strong> - Защита системных файлов</li>
+                    <li><strong>Firewall</strong> - Мониторинг входящих и исходящих соединений</li>
+                    <li><strong>Secure Enclave</strong> - Изолированный процессор для конфиденциальных данных</li>
+                </ul>
+            </div>
+
+            <div class="window-section">
+                <h2>Управление приватностью</h2>
+                <ul class="feature-list">
+                    <li>Контроль доступа к камере и микрофону</li>
+                    <li>Управление геолокацией</li>
+                    <li>Разрешения для конкретных приложений</li>
+                    <li>Панель приватности - видьте, что использует каждое приложение</li>
+                    <li>Зашифрованное хранилище и FileVault 2</li>
+                </ul>
+            </div>
+
+            <div class="window-section">
+                <h2>Меры защиты</h2>
+                <div class="feature-grid">
+                    <div class="feature-box">
+                        <strong>Биометрическая аутентификация</strong>
+                        <span>Touch ID и Face ID</span>
+                    </div>
+                    <div class="feature-box">
+                        <strong>Менеджер паролей</strong>
+                        <span>Защита Keychain</span>
+                    </div>
+                    <div class="feature-box">
+                        <strong>Обновления</strong>
+                        <span>Регулярные патчи безопасности</span>
+                    </div>
+                    <div class="feature-box">
+                        <strong>Приватный режим</strong>
+                        <span>Опции анонимного браузинга</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="window" id="performance">
+        <div class="window-header">
+            <div class="window-title">Производительность и оборудование</div>
+            <div class="window-controls">
+                <button class="window-btn window-close" onclick="closeWindow('performance')"></button>
+                <button class="window-btn window-minimize"></button>
+                <button class="window-btn window-maximize"></button>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="window-section">
+                <h2>Революция Apple Silicon</h2>
+                <p>macOS теперь работает на собственных процессорах Apple, обеспечивая исключительную производительность и эффективность.</p>
+                <ul class="feature-list">
+                    <li><strong>Чипы серии M</strong> - M1, M2, M3 и далее</li>
+                    <li><strong>Объединённая память</strong> - Более быстрое совместное использование данных между CPU и GPU</li>
+                    <li><strong>Энергоэффективность</strong> - Целодневная работа от батареи на MacBook</li>
+                    <li><strong>Neural Engine</strong> - Встроенный процессор машинного обучения</li>
+                </ul>
+            </div>
+
+            <div class="window-section">
+                <h2>Тестирование производительности</h2>
+                <div class="feature-grid">
+                    <div class="feature-box">
+                        <strong>Производительность CPU</strong>
+                        <span>Лучшие в индустрии многоядерные скорости</span>
+                    </div>
+                    <div class="feature-box">
+                        <strong>Мощность GPU</strong>
+                        <span>Встроенная графика высочайшего качества</span>
+                    </div>
+                    <div class="feature-box">
+                        <strong>Скорость хранилища</strong>
+                        <span>Ультра-быстрый NVMe SSD</span>
+                    </div>
+                    <div class="feature-box">
+                        <strong>Пропускная способность RAM</strong>
+                        <span>200GB/s пропускная способность памяти</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="window-section">
+                <h2>Оптимизация</h2>
+                <ul class="feature-list">
+                    <li>Activity Monitor - Мониторинг ресурсов системы</li>
+                    <li>Автоматическое управление ресурсами</li>
+                    <li>Оптимизированный запуск приложений</li>
+                    <li>Эффективные фоновые процессы</li>
+                    <li>Инструменты оптимизации хранилища</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="window" id="apps">
+        <div class="window-header">
+            <div class="window-title">Встроенные приложения</div>
+            <div class="window-controls">
+                <button class="window-btn window-close" onclick="closeWindow('apps')"></button>
+                <button class="window-btn window-minimize"></button>
+                <button class="window-btn window-maximize"></button>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="window-section">
+                <h2>Приложения для продуктивности</h2>
+                <ul class="feature-list">
+                    <li><strong>Mail</strong> - Полнофункциональный почтовый клиент</li>
+                    <li><strong>Calendar</strong> - Управление расписанием и событиями</li>
+                    <li><strong>Reminders</strong> - Управление задачами и списками</li>
+                    <li><strong>Notes</strong> - Быстрое создание заметок</li>
+                    <li><strong>TextEdit</strong> - Редактирование текста</li>
+                </ul>
+            </div>
+
+            <div class="window-section">
+                <h2>Творческие инструменты</h2>
+                <ul class="feature-list">
+                    <li><strong>Photos</strong> - Библиотека фотографий и редактор</li>
+                    <li><strong>iMovie</strong> - Редактирование видео</li>
+                    <li><strong>GarageBand</strong> - Создание музыки</li>
+                    <li><strong>Preview</strong> - Просмотр PDF и изображений</li>
+                    <li><strong>Apple Configurator</strong> - Управление устройствами</li>
+                </ul>
+            </div>
+
+            <div class="window-section">
+                <h2>Утилиты и система</h2>
+                <ul class="feature-list">
+                    <li>Finder - Управление файлами</li>
+                    <li>Terminal - Интерфейс командной строки</li>
+                    <li>System Preferences - Управление настройками</li>
+                    <li>Disk Utility - Управление дисками</li>
+                    <li>Console - Просмотр системных логов</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="window" id="system">
+        <div class="window-header">
+            <div class="window-title">Системные требования</div>
+            <div class="window-controls">
+                <button class="window-btn window-close" onclick="closeWindow('system')"></button>
+                <button class="window-btn window-minimize"></button>
+                <button class="window-btn window-maximize"></button>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="window-section">
+                <h2>Минимальные требования</h2>
+                <div class="feature-grid">
+                    <div class="feature-box">
+                        <strong>Процессор</strong>
+                        <span>Apple Silicon или Intel</span>
+                    </div>
+                    <div class="feature-box">
+                        <strong>ОЗУ</strong>
+                        <span>8 ГБ минимум, 16 ГБ рекомендуется</span>
+                    </div>
+                    <div class="feature-box">
+                        <strong>Хранилище</strong>
+                        <span>35 ГБ свободного места</span>
+                    </div>
+                    <div class="feature-box">
+                        <strong>Дисплей</strong>
+                        <span>Разрешение 1280x800</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="window-section">
+                <h2>Совместимые модели Mac</h2>
+                <ul class="feature-list">
+                    <li>MacBook Pro (2013 и позже)</li>
+                    <li>MacBook Air (2013 и позже)</li>
+                    <li>Mac mini (2013 и позже)</li>
+                    <li>iMac (2013 и позже)</li>
+                    <li>Mac Studio (2022 и позже)</li>
+                    <li>Mac Pro (2013 и позже)</li>
+                </ul>
+            </div>
+
+            <div class="window-section">
+                <h2>Последняя версия</h2>
+                <p><strong>macOS Sonoma (14.0)</strong> - Выпущена в сентябре 2023</p>
+                <p>Последние обновления приносят улучшенную производительность, новые функции и повышенную безопасность. Проверьте наличие обновлений в системных предпочтениях.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="back">
+        <a href="index.html" class="button">
+            <img src="img/icons8-полная-корзина-50.png" alt="Назад">
+            <span>Назад</span>
+        </a>
+    </div>
+
+    <script>
+        let activeWindow = 'about';
+
+        function openWindow(windowId, element) {
+            if (activeWindow && activeWindow !== windowId) {
+                const prevWindow = document.getElementById(activeWindow);
+                prevWindow.classList.add('closing');
+                setTimeout(() => {
+                    prevWindow.classList.remove('active', 'closing');
+                }, 300);
+            }
+
+            const window = document.getElementById(windowId);
+            window.classList.add('active');
+            activeWindow = windowId;
+
+            document.querySelectorAll('.dock-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            element.classList.add('active');
+
+            const overlay = document.getElementById('overlay');
+            overlay.classList.add('active');
+
+            setTimeout(() => {
+                const windowEl = document.getElementById(windowId);
+                const windowWidth = windowEl.offsetWidth;
+                const windowHeight = windowEl.offsetHeight;
+                const viewportWidth = window.innerWidth;
+                const viewportHeight = window.innerHeight;
+
+                windowEl.style.left = (viewportWidth - windowWidth) / 2 + 'px';
+                windowEl.style.top = (viewportHeight - windowHeight) / 2 + 'px';
+            }, 10);
+        }
+
+        function closeWindow(windowId) {
+            const window = document.getElementById(windowId);
+            window.classList.add('closing');
+            
+            setTimeout(() => {
+                window.classList.remove('active', 'closing');
+                document.getElementById('overlay').classList.remove('active');
+                
+                document.querySelectorAll('.dock-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+            }, 300);
+
+            activeWindow = null;
+        }
+
+        document.getElementById('overlay').addEventListener('click', function() {
+            if (activeWindow) {
+                closeWindow(activeWindow);
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && activeWindow) {
+                closeWindow(activeWindow);
+            }
+        });
+
+        window.addEventListener('load', () => {
+            openWindow('about', document.querySelector('[data-window="about"]'));
+        });
+
+        let isDragging = false;
+        let currentX;
+        let currentY;
+        let currentWindow;
+
+        document.addEventListener('mousedown', (e) => {
+            if (e.target.closest('.window-header')) {
+                isDragging = true;
+                currentWindow = e.target.closest('.window-header').closest('.window');
+                currentX = e.clientX - currentWindow.offsetLeft;
+                currentY = e.clientY - currentWindow.offsetTop;
+                currentWindow.style.zIndex = 300;
+            }
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (isDragging && currentWindow) {
+                currentWindow.style.left = (e.clientX - currentX) + 'px';
+                currentWindow.style.top = (e.clientY - currentY) + 'px';
+            }
+        });
+
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+            if (currentWindow) {
+                currentWindow.style.zIndex = 200;
+            }
+        });
+    </script>
+</body>
+</html>

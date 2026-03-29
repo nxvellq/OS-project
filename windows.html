@@ -1,0 +1,486 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OS</title>
+    <link rel="stylesheet" href="css/windows.css">
+</head>
+
+<body>
+    <div class="overlay" id="overlay"></div>
+    <div class="dock">
+        <div class="dock-item active" data-window="about" onclick="openWindow('about', this)">
+            <img src="img/layout_9950737.png" alt="macOS">
+        </div>
+        <div class="dock-item" data-window="features" onclick="openWindow('features', this)">
+            <img src="img/monitoring_11445738.png" alt="Функции">
+        </div>
+        <div class="dock-item" data-window="security" onclick="openWindow('security', this)">
+            <img src="img/web_14720798.png" alt="Безопасность">
+        </div>
+        <div class="dock-item" data-window="performance" onclick="openWindow('performance', this)">
+            <img src="img/optimization-website_17601954.png" alt="Производительность">
+        </div>
+        <div class="dock-separator"></div>
+        <div class="dock-item" data-window="apps" onclick="openWindow('apps', this)">
+            <img src="img/logo_16064595.png" alt="Приложения">
+        </div>
+        <div class="dock-item" data-window="system" onclick="openWindow('system', this)">
+            <img src="img/computer_10116451.png" alt="Система">
+        </div>
+    </div>
+    <div class="window" id="about">
+        <div class="window-header">
+            <div class="window-title">О Windows</div>
+            <div class="window-controls">
+                <button class="window-btn window-close" onclick="closeWindow('about')"></button>
+                <button class="window-btn window-minimize"></button>
+                <button class="window-btn window-maximize"></button>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="window-section">
+                <h2>Операционная система для миллионов ПК</h2>
+                <p>Windows — это проприетарная графическая операционная система, разработанная и продаваемая компанией
+                    Microsoft. Она является самой популярной операционной системой для персональных компьютеров.</p>
+            </div>
+
+            <div class="window-section">
+                <h2>История и эволюция</h2>
+                <ul class="feature-list">
+                    <li>Впервые выпущена в 1985 году как Windows 1.0</li>
+                    <li>Построена на гибридном ядре, обеспечивающем широкую совместимость</li>
+                    <li>Основные верcии: Windows 95/98 (эра «Пуск»), Windows XP (стабильность), Windows 7 (популярность), Windows 10/11 (современный стандарт)</li>
+                    <li>Развивается по модели «Windows as a Service» с регулярными обновлениями</li>
+                    <li>Поддерживает широкий спектр архитектур: x86, x64 и ARM</li>
+                </ul>
+            </div>
+
+            <div class="window-section">
+                <h2>Ключевые характеристики</h2>
+                <div class="feature-grid">
+                    <div class="feature-box">
+                        <strong>Универсальность</strong>
+                        <span>Работает на миллионах устройств: от офисных ПК до игровых станций</span>
+                    </div>
+                    <div class="feature-box">
+                        <strong>Мощная производительность</strong>
+                        <span>Оптимизирована для игр, бизнеса и профессиональных приложений</span>
+                    </div>
+                    <div class="feature-box">
+                        <strong>Безопасность и управление</strong>
+                        <span>Встроенные средства защиты (Defender), BitLocker и корпоративное управление</span>
+                    </div>
+                    <div class="feature-box">
+                        <strong>Бесшовная экосистема</strong>
+                        <span>Глубокая интеграция с Microsoft 365, Xbox и облачными сервисами</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="window" id="features">
+        <div class="window-header">
+            <div class="window-title">Функции Windows 11</div>
+            <div class="window-controls">
+                <button class="window-btn window-close" onclick="closeWindow('features')"></button>
+                <button class="window-btn window-minimize"></button>
+                <button class="window-btn window-maximize"></button>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="window-section">
+                <h2>Основные функции</h2>
+                <ul class="feature-list">
+                    <li><strong>Новый дизайн</strong> - Центрированное меню "Пуск", закругленные углы, прозрачность (Mica)</li>
+                    <li><strong>Виджеты</strong> - Персонализированная лента с новостями, погодой, календарем и задачами</li>
+                    <li><strong>Мастерство работы с окнами (Snap Layouts)</strong> - Быстрая организация окон по шаблонам</li>
+                    <li><strong>Виртуальные рабочие столы</strong> - Разделение задач по разным столам с уникальными обоями</li>
+                    <li><strong>Microsoft Teams</strong> - Встроенный чат и видеозвонки прямо из панели задач</li>
+                </ul>
+            </div>
+
+            <div class="window-section">
+                <h2>Продвинутые возможности</h2>
+                <ul class="feature-list">
+                    <li><strong>DirectStorage</strong> - Мгновенная загрузка игр благодаря технологии Xbox Series X|S</li>
+                    <li><strong>Auto HDR</strong> - Автоматическое улучшение цветов в играх</li>
+                    <li><strong>Android-приложения</strong> - Запуск мобильных приложений через Amazon Appstore</li>
+                    <li><strong>Windows Subsystem for Linux (WSL)</strong> - Полноценный запуск Linux без виртуалки</li>
+                    <li><strong>BitLocker</strong> - Полное шифрование диска для защиты данных</li>
+                </ul>
+            </div>
+
+            <div class="window-section">
+                <h2>Инструменты продуктивности</h2>
+                <ul class="feature-list">
+                    <li><strong>Microsoft Edge</strong> - Современный браузер с встроенным ChatGPT и дизайнером</li>
+                    <li><strong>Clipchamp</strong> - Встроенный видеоредактор с ИИ-функциями</li>
+                    <li><strong>PowerToys</strong> - Набор утилит для продвинутых пользователей (FancyZones, PowerRename)</li>
+                    <li><strong>Блокнот</strong> - Обновленный текстовый редактор с вкладками и автосохранением</li>
+                    <li><strong>Проводник</strong> - Улучшенный файловый менеджер с вкладками и современным интерфейсом</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="window" id="security">
+        <div class="window-header">
+            <div class="window-title">Безопасность Windows 11</div>
+            <div class="window-controls">
+                <button class="window-btn window-close" onclick="closeWindow('security')"></button>
+                <button class="window-btn window-minimize"></button>
+                <button class="window-btn window-maximize"></button>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="window-section">
+                <h2>Встроенная защита</h2>
+                <ul class="feature-list">
+                    <li><strong>Microsoft Defender</strong> - Антивирус и защитник от вредоносного ПО в реальном времени</li>
+                    <li><strong>Windows Hello</strong> - Вход по лицу (IR-камера) или отпечатку пальца</li>
+                    <li><strong>BitLocker</strong> - Полное шифрование диска для защиты данных при потере устройства</li>
+                    <li><strong>Smart App Control</strong> - Блокировка подозрительных и ненадежных приложений</li>
+                    <li><strong>Брандмауэр Windows</strong> - Мониторинг сетевого трафика и защита от вторжений</li>
+                </ul>
+            </div>
+
+            <div class="window-section">
+                <h2>Управление приватностью</h2>
+                <ul class="feature-list">
+                    <li>Контроль доступа к камере, микрофону и геолокации для каждого приложения</li>
+                    <li>Панель конфиденциальности — полная прозрачность использования данных</li>
+                    <li>Защита от вредоносных сайтов в Microsoft Edge (SmartScreen)</li>
+                    <li>Изолированная среда Windows Sandbox для безопасного запуска подозрительных файлов</li>
+                    <li>Windows Security Center — единый центр управления безопасностью</li>
+                </ul>
+            </div>
+
+            <div class="window-section">
+                <h2>Корпоративная защита</h2>
+                <div class="feature-grid">
+                    <div class="feature-box">
+                        <strong>Microsoft Defender for Endpoint</strong>
+                        <span>Расширенная защита для бизнеса</span>
+                    </div>
+                    <div class="feature-box">
+                        <strong>Windows Information Protection</strong>
+                        <span>Защита корпоративных данных</span>
+                    </div>
+                    <div class="feature-box">
+                        <strong>Secured-core PC</strong>
+                        <span>Аппаратная защита на уровне процессора</span>
+                    </div>
+                    <div class="feature-box">
+                        <strong>Автоматические обновления</strong>
+                        <span>Ежемесячные патчи безопасности</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="window" id="performance">
+        <div class="window-header">
+            <div class="window-title">Производительность Windows 11</div>
+            <div class="window-controls">
+                <button class="window-btn window-close" onclick="closeWindow('performance')"></button>
+                <button class="window-btn window-minimize"></button>
+                <button class="window-btn window-maximize"></button>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="window-section">
+                <h2>Оптимизация для игр</h2>
+                <ul class="feature-list">
+                    <li><strong>DirectX 12 Ultimate</strong> - Трассировка лучей, переменная скорость затенения</li>
+                    <li><strong>Auto HDR</strong> - Улучшенная цветопередача в играх</li>
+                    <li><strong>DirectStorage</strong> - Мгновенная загрузка игр с NVMe SSD</li>
+                    <li><strong>Xbox Game Bar</strong> - Управление игрой, скриншоты и запись видео</li>
+                    <li><strong>Игровой режим</strong> - Приоритизация ресурсов для игр</li>
+                </ul>
+            </div>
+
+            <div class="window-section">
+                <h2>Технологии производительности</h2>
+                <div class="feature-grid">
+                    <div class="feature-box">
+                        <strong>Поддержка Intel Thread Director</strong>
+                        <span>Оптимальное распределение задач между P и E ядрами</span>
+                    </div>
+                    <div class="feature-box">
+                        <strong>Режим S0 Modern Standby</strong>
+                        <span>Мгновенное пробуждение, как на смартфоне</span>
+                    </div>
+                    <div class="feature-box">
+                        <strong>Memory Integrity</strong>
+                        <span>Изоляция ядра для защиты от атак</span>
+                    </div>
+                    <div class="feature-box">
+                        <strong>Оптимизированный апдейт</strong>
+                        <span>Загрузка обновлений в фоне без прерывания работы</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="window-section">
+                <h2>Мониторинг и настройка</h2>
+                <ul class="feature-list">
+                    <li><strong>Диспетчер задач</strong> - Полный контроль над процессами и автозагрузкой</li>
+                    <li><strong>Монитор ресурсов</strong> - Детальная статистика по CPU, RAM, диску и сети</li>
+                    <li><strong>PowerShell и Terminal</strong> - Мощные инструменты для автоматизации</li>
+                    <li><strong>PowerToys</strong> - FancyZones, Always on Top и другие утилиты</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="window" id="apps">
+        <div class="window-header">
+            <div class="window-title">Встроенные приложения</div>
+            <div class="window-controls">
+                <button class="window-btn window-close" onclick="closeWindow('apps')"></button>
+                <button class="window-btn window-minimize"></button>
+                <button class="window-btn window-maximize"></button>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="window-section">
+                <h2>Офисные и рабочие приложения</h2>
+                <ul class="feature-list">
+                    <li><strong>Microsoft Outlook (новый)</strong> - Почта, календарь и контакты в одном месте</li>
+                    <li><strong>Календарь</strong> - Управление расписанием и встречами</li>
+                    <li><strong>Microsoft To Do</strong> - Списки задач и напоминания</li>
+                    <li><strong>OneNote</strong> - Цифровой блокнот для заметок</li>
+                    <li><strong>Microsoft 365 (Word, Excel, PowerPoint)</strong> - Доступны в Microsoft Store</li>
+                </ul>
+            </div>
+
+            <div class="window-section">
+                <h2>Творческие инструменты</h2>
+                <ul class="feature-list">
+                    <li><strong>Clipchamp</strong> - Видеоредактор с ИИ-озвучкой и шаблонами</li>
+                    <li><strong>Фото</strong> - Управление фотографиями с ИИ-редактированием</li>
+                    <li><strong>Paint</strong> - Обновленный редактор с поддержкой слоев и прозрачности</li>
+                    <li><strong>Voice Recorder</strong> - Запись звука с транскрипцией</li>
+                    <li><strong>Snipping Tool</strong> - Снимки экрана с записью видео</li>
+                </ul>
+            </div>
+
+            <div class="window-section">
+                <h2>Системные утилиты</h2>
+                <ul class="feature-list">
+                    <li><strong>Проводник</strong> - Файловый менеджер с вкладками</li>
+                    <li><strong>Параметры</strong> - Современная панель управления</li>
+                    <li><strong>Диспетчер задач</strong> - Мониторинг системы и управление процессами</li>
+                    <li><strong>Командная строка / PowerShell / Terminal</strong> - Для разработчиков и администраторов</li>
+                    <li><strong>Microsoft Store</strong> - Каталог приложений и игр</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="window" id="system">
+        <div class="window-header">
+            <div class="window-title">Системные требования Windows 11</div>
+            <div class="window-controls">
+                <button class="window-btn window-close" onclick="closeWindow('system')"></button>
+                <button class="window-btn window-minimize"></button>
+                <button class="window-btn window-maximize"></button>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="window-section">
+                <h2>Минимальные требования</h2>
+                <div class="feature-grid">
+                    <div class="feature-box">
+                        <strong>Процессор</strong>
+                        <span>1 ГГц, 2+ ядра, 64-бит (Intel 8-го поколения / AMD Ryzen 2000+ или новее)</span>
+                    </div>
+                    <div class="feature-box">
+                        <strong>ОЗУ</strong>
+                        <span>4 ГБ (8 ГБ рекомендуется)</span>
+                    </div>
+                    <div class="feature-box">
+                        <strong>Хранилище</strong>
+                        <span>64 ГБ свободного места</span>
+                    </div>
+                    <div class="feature-box">
+                        <strong>Дисплей</strong>
+                        <span>HD (720p), 9" и более, 8 бит на цвет</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="window-section">
+                <h2>Обязательные требования</h2>
+                <ul class="feature-list">
+                    <li><strong>TPM 2.0</strong> - Модуль доверенной платформы (аппаратный или встроенный в процессор)</li>
+                    <li><strong>Secure Boot</strong> - Безопасная загрузка UEFI</li>
+                    <li><strong>UEFI</strong> - Совместимая прошивка с поддержкой Secure Boot</li>
+                    <li><strong>DirectX 12</strong> - Совместимая видеокарта с драйвером WDDM 2.0</li>
+                    <li><strong>Интернет</strong> - Для обновлений и настройки (для Windows 11 Home)</li>
+                </ul>
+            </div>
+
+            <div class="window-section">
+                <h2>Поддерживаемые процессоры</h2>
+                <ul class="feature-list">
+                    <li>Intel Core 8-го поколения (Coffee Lake) и новее</li>
+                    <li>AMD Ryzen 2000-й серии и новее (Zen+)</li>
+                    <li>Qualcomm Snapdragon 850 и новее (ARM)</li>
+                    <li><strong>Проверьте совместимость через приложение PC Health Check</strong></li>
+                </ul>
+            </div>
+            
+            <div class="window-section">
+                <h2>Последняя версия</h2>
+                <p><strong>Windows 11 24H2</strong> - Ежегодное обновление с новыми функциями и улучшениями</p>
+                <p>Windows 11 получает регулярные ежемесячные обновления безопасности и функциональные обновления раз в год. Проверьте наличие обновлений в Параметрах → Центр обновления Windows.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="back">
+        <a href="index.html" class="button">
+            <img src="https://img.icons8.com/?size=96&id=8usOzL0PIrcw&format=png" alt="Назад">
+            <span>Назад</span>
+        </a>
+    </div>
+
+    <script>
+    let activeWindow = null;
+
+    function openWindow(windowId, element) {
+        if (activeWindow && activeWindow !== windowId) {
+            const prevWindow = document.getElementById(activeWindow);
+            if (prevWindow) {
+                prevWindow.classList.add('closing');
+                setTimeout(() => {
+                    prevWindow.classList.remove('active', 'closing');
+                }, 300);
+            }
+        }
+
+        const window = document.getElementById(windowId);
+        window.classList.add('active');
+        activeWindow = windowId;
+
+        document.querySelectorAll('.dock-item').forEach(item => {
+            item.classList.remove('active');
+        });
+        element.classList.add('active');
+
+        const overlay = document.getElementById('overlay');
+        overlay.classList.add('active');
+
+        
+        setTimeout(() => {
+            const windowEl = document.getElementById(windowId);
+            const windowHeight = windowEl.offsetHeight;
+            const windowWidth = windowEl.offsetWidth;
+            
+            
+            const dockHeight = 45;
+            const bottomOffset = dockHeight + 15; 
+            
+            windowEl.style.left = '20px';
+            windowEl.style.bottom = bottomOffset + 'px';
+            windowEl.style.top = 'auto';
+            windowEl.style.right = 'auto';
+            
+            
+            if (windowHeight > window.innerHeight - bottomOffset - 20) {
+                windowEl.style.maxHeight = (window.innerHeight - bottomOffset - 20) + 'px';
+                windowEl.style.overflow = 'hidden';
+            }
+        }, 10);
+    }
+
+    function closeWindow(windowId) {
+        const window = document.getElementById(windowId);
+        if (!window) return;
+        
+        window.classList.add('closing');
+
+        setTimeout(() => {
+            window.classList.remove('active', 'closing');
+            document.getElementById('overlay').classList.remove('active');
+
+            document.querySelectorAll('.dock-item').forEach(item => {
+                item.classList.remove('active');
+            });
+        }, 300);
+
+        activeWindow = null;
+    }
+
+    document.getElementById('overlay').addEventListener('click', function () {
+        if (activeWindow) {
+            closeWindow(activeWindow);
+        }
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && activeWindow) {
+            closeWindow(activeWindow);
+        }
+    });
+
+    
+    window.addEventListener('load', () => {
+        
+        const aboutWindow = document.getElementById('about');
+        const aboutIcon = document.querySelector('[data-window="about"]');
+        
+        aboutWindow.classList.add('active');
+        activeWindow = 'about';
+        aboutIcon.classList.add('active');
+        
+        const overlay = document.getElementById('overlay');
+        overlay.classList.add('active');
+        
+        
+        const dockHeight = 45;
+        const bottomOffset = dockHeight + 15;
+        
+        aboutWindow.style.left = '20px';
+        aboutWindow.style.bottom = bottomOffset + 'px';
+        aboutWindow.style.top = 'auto';
+        aboutWindow.style.right = 'auto';
+    });
+
+    let isDragging = false;
+    let currentX;
+    let currentY;
+    let currentWindow;
+
+    document.addEventListener('mousedown', (e) => {
+        if (e.target.closest('.window-header')) {
+            isDragging = true;
+            currentWindow = e.target.closest('.window-header').closest('.window');
+            currentX = e.clientX - currentWindow.offsetLeft;
+            currentY = e.clientY - currentWindow.offsetTop;
+            currentWindow.style.zIndex = 300;
+            currentWindow.style.bottom = 'auto';
+            currentWindow.style.top = (e.clientY - currentY) + 'px';
+        }
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (isDragging && currentWindow) {
+            currentWindow.style.left = (e.clientX - currentX) + 'px';
+            currentWindow.style.top = (e.clientY - currentY) + 'px';
+        }
+    });
+
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
+        if (currentWindow) {
+            currentWindow.style.zIndex = 200;
+        }
+    });
+</script>
+</body>
+
+</html>

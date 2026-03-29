@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Терминал - Обучение</title>
+    <link rel="stylesheet" href="css/linux.css">
+</head>
+<body>
+    <div class="container">
+        <div class="terminal">
+            <div class="terminal-header">
+                <span class="terminal-header-title">user@linux-system:~$ bash</span>
+                <div class="terminal-buttons">
+                    <button class="terminal-button btn-close" onclick="closeTerminal()"></button>
+                    <button class="terminal-button btn-minimize"></button>
+                    <button class="terminal-button btn-maximize"></button>
+                </div>
+            </div>
+            <div class="terminal-output" id="terminalOutput">
+                <div style="color: #00ff00; margin-bottom: 15px;">
+                    ╔════════════════════════════════════════╗<br>
+                    ║   Linux Интерактивный Терминал       ║<br>
+                    ║   Educational Terminal System         ║<br>
+                    ╚════════════════════════════════════════╝<br>
+                    <br>
+                    Выберите команду из списка справа для получения информации<br>
+                    Нажмите на кнопку команды и посмотрите описание и пример использования<br>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <div class="info-title">Справка по командам Linux</div>
+            <div class="info-content" id="infoContent">
+                <p>Выберите команду из списка ниже:</p>
+            </div>
+            <div class="commands-grid" id="commandsGrid"></div>
+        </div>
+    </div>
+
+    <div class="back">
+        <a href="index.html" class="button">
+            <img src="img/logo.png" alt="Назад" width="70" height="70">
+            <span style="margin-top: 5px;">Назад</span>
+        </a>
+    </div>
+
+    <script>
+        const commands = {
+            'about': {
+                name: 'about',
+                description: 'Выводит информацию про Linux.',
+                fullInfo: 'История Linux началась в 1991 году, когда финский студент Линус Торвальдс создал ядро операционной системы и выложил его в открытый доступ. Сегодня Linux используется повсюду: от суперкомпьютеров и серверов до смартфонов (Android основан на Linux) и умных часов.',
+                syntax: 'about',
+                examples: [
+                    'about',
+
+                ],
+                output: 'Linux — это семейство операционных систем с открытым исходным кодом, построенных на ядре Linux. В отличие от Windows, Linux бесплатен и разрабатывается сообществом программистов по всему миру.'
+            },
+            'features': {
+                name: 'features',
+                description: 'Показывает ключевые особенности Linux',
+                fullInfo: 'Ключевые особенности Linux.',
+                syntax: 'features',
+                examples: [
+                    'Полностью бесплатен и доступен для свободного скачивания',
+                    'Открытый исходный код — любой может изучить, изменить и распространять систему',
+                    'Высочайшая безопасность и стабильность благодаря открытости кода',
+                    'Огромное разнообразие версий (дистрибутивов) под разные задачи',
+                    'Минимальные системные требования — работает даже на старом оборудовании',
+                    'Отсутствие слежки и сбора данных пользователей'
+                ],
+                output: 'Linux особенно популярен среди программистов, системных администраторов и энтузиастов, ценящих свободу настройки и контроля над системой.'
+            },
+            'terminal': {
+                name: 'terminal',
+                description: 'О терминале.',
+                fullInfo: 'Терминал — самое важное отличие от Windows. Это командная строка, через которую опытные пользователи выполняют большинство задач.',
+                syntax: 'terminal',
+                examples: [
+                    'terminal',
+
+                ],
+                output: 'Через терминал устанавливают программы, настраивают систему и управляют файлами.'
+            },
+            'distribution': {
+                name: 'distribution',
+                description: 'О дистрибутивах.',
+                fullInfo: 'Дистрибутивы Linux — это версии системы, собранные под разные задачи. Вот самые популярные из них:',
+                syntax: 'distribution',
+                examples: [
+                    'Ubuntu — самый известный дистрибутив для новичков. Основан на Debian, имеет огромное сообщество, прост в установке и использовании. Отличный выбор для первого знакомства с Linux. Выходит в версиях LTS (долгосрочная поддержка) каждые 2 года.',
+                    'Linux Mint — дистрибутив на основе Ubuntu с интерфейсом, максимально похожим на Windows. Идеален для перехода с Windows благодаря привычному меню «Пуск» и панели задач. Поставляется с предустановленными кодеками и драйверами.',
+                    'Debian — легендарный стабильный дистрибутив, основа многих других систем. Славится своей надёжностью и строгим подходом к включению программ. Лучший выбор для серверов.',
+                    'Fedora — передовой дистрибутив от компании Red Hat. Использует самые новые версии программ и технологий. Отличный выбор для разработчиков и энтузиастов.',
+                    'Arch Linux — дистрибутив для опытных пользователей. Устанавливается полностью вручную, позволяет собрать систему идеально под свои нужды. Имеет лучшую документацию (Arch Wiki) и модель роллинг-релиза (постоянные обновления).'
+                ],
+                output: 'Для серверов также популярны CentOS, Rocky Linux и AlmaLinux — бесплатные аналоги Red Hat Enterprise Linux.'
+            },
+            'rm': {
+                name: 'rm',
+                description: 'Удаляет файлы и директории',
+                fullInfo: 'Remove - удаляет файлы или пустые директории. ОСТОРОЖНО - удаление необратимо!',
+                syntax: 'rm [опции] [файл/папка]',
+                examples: [
+                    'rm file.txt - удалить файл',
+                    'rm -r folder - удалить папку со всем содержимым',
+                    'rm -f file.txt - принудительное удаление',
+                    'rm *.txt - удалить все txt файлы'
+                ],
+                output: 'Файл удален'
+            },
+            'cp': {
+                name: 'cp',
+                description: 'Копирует файлы и папки',
+                fullInfo: 'Copy - создает копию файла или папки в указанном месте.',
+                syntax: 'cp [опции] [источник] [назначение]',
+                examples: [
+                    'cp file.txt file_copy.txt - копировать файл',
+                    'cp -r folder folder_copy - копировать папку',
+                    'cp file.txt /home/user/Desktop/ - копировать в другую папку'
+                ],
+                output: 'user@linux:/home/user$ ls\nfile.txt  file_copy.txt'
+            },
+            'mv': {
+                name: 'mv',
+                description: 'Перемещает или переименовывает файлы',
+                fullInfo: 'Move - перемещает файл/папку в другое место или переименовывает их.',
+                syntax: 'mv [источник] [назначение]',
+                examples: [
+                    'mv old.txt new.txt - переименовать файл',
+                    'mv file.txt /home/user/Desktop/ - переместить в другую папку',
+                    'mv folder1 folder2 - переименовать или переместить папку'
+                ],
+                output: 'user@linux:/home/user$ ls\nnew.txt'
+            },
+            'touch': {
+                name: 'touch',
+                description: 'Создает пустой файл или обновляет время доступа',
+                fullInfo: 'Touch - создает новый пустой файл или обновляет информацию о времени доступа существующего файла.',
+                syntax: 'touch [имя_файла]',
+                examples: [
+                    'touch file.txt - создать новый файл',
+                    'touch file1.txt file2.txt - создать нес��олько файлов',
+                    'touch -t 202012250000 file.txt - установить время доступа'
+                ],
+                output: 'user@linux:/home/user$ ls\nfile.txt'
+            },
+            'cat': {
+                name: 'cat',
+                description: 'Выводит содержимое файла',
+                fullInfo: 'Concatenate - выводит содержимое одного или нескольких файлов на экран.',
+                syntax: 'cat [файл]',
+                examples: [
+                    'cat file.txt - показать содержимое файла',
+                    'cat file1.txt file2.txt - показать содержимое двух файлов',
+                    'cat -n file.txt - показать с номерами строк'
+                ],
+                output: 'Hello, World!\nThis is a test file.'
+            },
+            'grep': {
+                name: 'grep',
+                description: 'Ищет текст в файлах',
+                fullInfo: 'Global Regular Expression Print - ищет строки, содержащие указанный шаблон.',
+                syntax: 'grep [опции] [шаблон] [файл]',
+                examples: [
+                    'grep "Linux" file.txt - найти слово Linux',
+                    'grep -i "linux" file.txt - поиск без учета регистра',
+                    'grep -n "test" file.txt - показать номера строк',
+                    'grep -r "text" . - рекурсивный поиск'
+                ],
+                output: 'This is a test file.\nLinux is great!'
+            },
+            'find': {
+                name: 'find',
+                description: 'Ищет файлы по критериям',
+                fullInfo: 'Find - ищет файлы в директориях по различным критериям (имя, размер, тип и т.д.).',
+                syntax: 'find [путь] [условие]',
+                examples: [
+                    'find . -name "*.txt" - найти все txt файлы',
+                    'find / -name "file.txt" - найти файл в системе',
+                    'find . -size +1M - найти файлы больше 1МБ',
+                    'find . -type d - найти все директории'
+                ],
+                output: './file.txt\n./documents/test.txt\n./downloads/data.txt'
+            },
+            'chmod': {
+                name: 'chmod',
+                description: 'Изменяет права доступа к файлам',
+                fullInfo: 'Change Mode - изменяет права доступа (чтение, запись, исполнение) для файлов и директорий.',
+                syntax: 'chmod [режим] [файл]',
+                examples: [
+                    'chmod 755 file.txt - дать права rwxr-xr-x',
+                    'chmod 644 file.txt - дать права rw-r--r--',
+                    'chmod +x script.sh - добавить право исполнения',
+                    'chmod -r file - убрать право чтения'
+                ],
+                output: 'user@linux:/home/user$ ls -l\n-rwxr-xr-x  1 user user    file.txt'
+            },
+            'sudo': {
+                name: 'sudo',
+                description: 'Выполняет команду с правами администратора',
+                fullInfo: 'Superuser Do - позволяет выполнить команду с правами суперпользователя (root).',
+                syntax: 'sudo [команда]',
+                examples: [
+                    'sudo apt-get update - обновить пакеты',
+                    'sudo reboot - перезагрузить систему',
+                    'sudo nano /etc/hosts - редактировать системный файл',
+                    'sudo ls /root - просмотр папки root'
+                ],
+                output: '[sudo] пароль для user: '
+            },
+            'apt-get': {
+                name: 'apt-get',
+                description: 'Управление пакетами (Debian/Ubuntu)',
+                fullInfo: 'Advanced Package Tool - инструмент для установки, удаления и обновления программ в Debian-based системах.',
+                syntax: 'apt-get [команда] [пакет]',
+                examples: [
+                    'sudo apt-get update - обновить список пакетов',
+                    'sudo apt-get install firefox - установить приложение',
+                    'sudo apt-get remove firefox - удалить приложение',
+                    'sudo apt-get upgrade - обновить все пакеты'
+                ],
+                output: 'Чтение списков пакетов... Готово'
+            }
+        };
+
+        let currentCommand = null;
+
+        function executeCommand(cmdName) {
+            const cmd = commands[cmdName];
+            currentCommand = cmdName;
+
+            const output = document.getElementById('terminalOutput');
+            output.innerHTML = '';
+
+            const commandLine = document.createElement('div');
+            commandLine.className = 'command-line';
+            commandLine.innerHTML = `
+                <span class="prompt">user@linux:~$</span>
+                <span class="command-text">${cmd.name}</span>
+            `;
+            output.appendChild(commandLine);
+
+            const loadingLine = document.createElement('div');
+            loadingLine.className = 'command-line';
+            loadingLine.innerHTML = `<span class="loading"><span>.</span><span>.</span><span>.</span></span>`;
+            output.appendChild(loadingLine);
+
+            setTimeout(() => {
+                loadingLine.remove();
+                
+                const resultLine = document.createElement('div');
+                resultLine.style.marginTop = '10px';
+                resultLine.innerHTML = `<span class="output-text">${cmd.output.replace(/\n/g, '<br>')}</span>`;
+                output.appendChild(resultLine);
+
+                const promptLine = document.createElement('div');
+                promptLine.className = 'command-line';
+                promptLine.style.marginTop = '15px';
+                promptLine.innerHTML = `<span class="prompt">user@linux:~$</span>`;
+                output.appendChild(promptLine);
+
+                output.scrollTop = output.scrollHeight;
+            }, 600);
+
+            updateInfoPanel(cmd);
+
+            document.querySelectorAll('.command-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-cmd="${cmdName}"]`).classList.add('active');
+        }
+
+        function updateInfoPanel(cmd) {
+            const infoContent = document.getElementById('infoContent');
+            let examplesHTML = '';
+            
+            cmd.examples.forEach((example, index) => {
+                examplesHTML += `<br><strong>Пример ${index + 1}:</strong> <code>${example}</code>`;
+            });
+
+            infoContent.innerHTML = `
+                <strong>Команда:</strong> <code>${cmd.name}</code><br><br>
+                <strong>Описание:</strong><br>
+                ${cmd.description}<br><br>
+                <strong>Полная информация:</strong><br>
+                ${cmd.fullInfo}<br><br>
+                <strong>Синтаксис:</strong><br>
+                <code>${cmd.syntax}</code><br><br>
+                <strong>Примеры использования:</strong>
+                ${examplesHTML}
+            `;
+        }
+
+        function initializeCommandButtons() {
+            const grid = document.getElementById('commandsGrid');
+            Object.keys(commands).forEach(cmdName => {
+                const btn = document.createElement('button');
+                btn.className = 'command-btn';
+                btn.textContent = `$ ${commands[cmdName].name}`;
+                btn.setAttribute('data-cmd', cmdName);
+                btn.onclick = () => executeCommand(cmdName);
+                grid.appendChild(btn);
+            });
+        }
+
+        function closeTerminal() {
+            if (confirm('Вы уверены, что хотите закрыть терминал?')) {
+                window.location.href = 'index.html';
+            }
+        }
+
+        window.addEventListener('load', () => {
+            initializeCommandButtons();
+            executeCommand('ls');
+        });
+    </script>
+</body>
+</html>
